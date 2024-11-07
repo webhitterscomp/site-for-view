@@ -143,7 +143,7 @@
                         </div>
 
                     </div>
-                    <button type="button" class="btn btn-primary mt-4 ml-3" id="continueBtn">Continue</button>
+                    <button type="button" class="btn btn-primary mt-4 ml-" id="continueBtn">Continue</button>
                 </div>
 
             </div>
@@ -264,9 +264,9 @@
     <!-- Area Details -->
     <div class="mb-3 row">
         <label for="areaDetails" class="form-label col-md-4">Add Area Details <i class="fas fa-question-circle" data-bs-toggle="tooltip" title="Enter plot area in square feet"></i></label>
-        <div class="input-group col-md-8">
-            <input type="text" class="form-control col-md-10" id="areaDetails" placeholder="Plot Area">
-            <select class="form-select form-control col-md-2">
+        <div class="input-group col-md-8 flex-row " >
+            <input type="text" class="form-control col-10" id="areaDetails" placeholder="Plot Area">
+            <select class="form-select form-control col-2">
                 <option value="sq.ft.">sq.ft.</option>
             </select>
         </div>
@@ -346,17 +346,14 @@
         </div>
     </div>
      <hr class="shadow-lg"/>
+</form> 
+`;
 
-</form>
-
-    
-                `;
                             break;
                         case 4:
                             contentHtml = `
                    <div class="container" id="containerId">
-                       
-                                                     <div class="mt-4">
+    <div class="mt-4">
         <h1 class="section-title">Add one video of property</h1>
         <p class="section-subtitle">
             A video is worth a thousand pictures. Properties with videos get higher page views
@@ -367,8 +364,7 @@
             <span class="badge">Only with Infinity Listings</span>
             <h5>Videos available only with infinity listings only</h5>
             <p>Drag your videos here or <a class="video-guidelines" href="#" id="uploadVideoLink">Upload</a></p>
-            <p>Upload video of max size 80 MB in format .mov, .mp4, .H264. Video duration should be less than 10 mins.
-            </p>
+            <p>Upload video of max size 80 MB in format .mov, .mp4, .H264. Video duration should be less than 10 mins.</p>
             <input type="file" id="videoInput1" accept="video/*" style="display: none;" />
             <div id="videoThumbnail"></div>
         </div>
@@ -377,25 +373,22 @@
         <h1 class="section-title">Add photos of your property <span class="section-subtitle">(Optional)</span></h1>
         <p class="section-subtitle">A picture is worth a thousand words. 87% of buyers look at photos before buying</p>
         <div class="upload-photo-card mt-3">
-            <img alt="Icon representing photo upload" height="50"
-                src="https://storage.googleapis.com/a1aa/image/mvYdle4DZBz8HK83z95zs5FuFvXBaQydk3If3SzTiixcPoqTA.jpg"
-                width="50" />
-            <h5>+ Add atleast 5 photos</h5>
-            <p>Drag and drop your photos here<br />Upto 50 photos • Max. size 10 MB • Formats: png, jpg, jpeg, gif,
-                webp, heic, heif.</p>
+            <img alt="Icon representing photo upload" height="50" src="https://storage.googleapis.com/a1aa/image/mvYdle4DZBz8HK83z95zs5FuFvXBaQydk3If3SzTiixcPoqTA.jpg" width="50" />
+            <h5>+ Add at least 5 photos</h5>
+            <p>Drag and drop your photos here<br />Upto 50 photos • Max. size 10 MB • Formats: png, jpg, jpeg, gif, webp, heic, heif.</p>
             <button class="btn" id="uploadPhotosButton">Upload Photos Now</button>
-            <input type="file" id="photoInput" accept="image" multiple style="display: none;" >
-            <div id="photoThumbnails" class=""></div>
+            <input type="file" id="photoInput" accept="image" multiple style="display: none;" />
+            <div id="photoThumbnails"></div>
         </div>
         <div class="info-box mt-3">
-            <i class="fas fa-lightbulb"></i> Add <strong>4+ property photos</strong> &amp; increase responses upto 21%
+            <i class="fas fa-lightbulb"></i> Add <strong>4+ property photos</strong> &amp; increase responses up to 21%
         </div>
         <div class="warning-box mt-3">
             <i class="fas fa-exclamation-triangle"></i> Without photos your ad will be ignored by buyers
         </div>
-       
     </div>   
-      </div>
+</div>
+
                 `;
                             break;
                         case 5:
@@ -636,82 +629,89 @@
                     });
                 }
 
-
-
-
-
-
                 // ===================for photo and video thembnail=====
-                // const container = document.getElementById('containerId'); // Replace 'containerId' with the actual ID
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Create a MutationObserver to watch for changes in the DOM
+                    const observer = new MutationObserver(function (mutationsList, observer) {
+                        // Loop through mutations to check for added elements
+                        mutationsList.forEach(function (mutation) {
+                            if (mutation.type === 'childList') {
+                                // Check if the photoThumbnails element is now in the DOM
+                                const photoThumbnails = document.getElementById('photoThumbnails');
+                                if (photoThumbnails) {
+                                    // The element is now in the DOM, stop observing
+                                    observer.disconnect();
+                                    // Call your function to add event listeners here
+                                    attachEventListeners();
+                                }
+                            }
+                        });
+                    });
 
-                // // DOMContentLoaded equivalent
+                    // Observe changes to the body (or a specific parent container where your content is injected)
+                    observer.observe(document.body, { childList: true, subtree: true });
 
-                // container.onclick = function (event) {
-                //     if (event.target.id === 'uploadVideoLink') {
-                //         console.log('Video upload button clicked');
-                //         document.getElementById('videoInput1').click();
-                //     } else if (event.target.id === 'uploadPhotosButton') {
-                //         console.log('Photo upload button clicked');
-                //         document.getElementById('photoInput').click();
-                //     }
-                // };
-                // window.onload = function () {
-                //     // Click handler
+                    function attachEventListeners() {
+                        // Get references to the elements
+                        const container = document.getElementById('containerId');
+                        const photoThumbnails = document.getElementById('photoThumbnails');
+                        const uploadPhotosButton = document.getElementById('uploadPhotosButton');
+
+                        if (photoThumbnails && uploadPhotosButton) {
+                            // Event delegation: Attach the listener to the parent container
+                            container.addEventListener('click', function (event) {
+                                // Handle the "Upload Photos Now" button click
+                                if (event.target && event.target.id === 'uploadPhotosButton') {
+                                    const photoInput = document.getElementById('photoInput');
+                                    if (photoInput) {
+                                        photoInput.click();
+                                    } else {
+                                        console.error('photoInput element not found!');
+                                    }
+                                }
+                            });
+
+                            // Event delegation for the file input change event
+                            container.addEventListener('change', function (event) {
+                                // Handle file selection event
+                                if (event.target && event.target.id === 'photoInput') {
+                                    const files = event.target.files;
+
+                                    // Clear previous thumbnails
+                                    photoThumbnails.innerHTML = '';
+
+                                    // Loop through the selected files
+                                    for (let i = 0; i < files.length; i++) {
+                                        const file = files[i];
+
+                                        // Create a FileReader to read the image file
+                                        const reader = new FileReader();
+
+                                        reader.onload = function (e) {
+                                            // Create an image element to display the thumbnail
+                                            const img = document.createElement('img');
+                                            img.src = e.target.result;
+                                            img.alt = 'Thumbnail';
+                                            img.classList.add('thumbnail');
+                                            img.style.maxWidth = '300px'; // Styling for thumbnails
+                                            img.style.maxHeight = '300px'; // Styling for thumbnails
+                                            img.style.marginRight = '10px';
+                                            img.style.marginBottom = '10px';
+
+                                            // Append the thumbnail to the photoThumbnails div
+                                            photoThumbnails.appendChild(img);
+                                        };
+
+                                        // Read the selected file as a data URL (base64)
+                                        reader.readAsDataURL(file);
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
 
 
-                //     // Change handler for video input
-                //     // document.getElementById('videoInput1').onclick = function (event) {
-                //     //     console.log('Video file selected');
-                //     //     const file = event.target.files[0];
-                //     //     if (file) {
-                //     //         const videoThumbnail = document.getElementById('videoThumbnail');
-                //     //         videoThumbnail.innerHTML = '';
-                //     //         const videoElement = document.createElement('video');
-                //     //         videoElement.src = URL.createObjectURL(file);
-                //     //         videoElement.controls = true;
-                //     //         videoElement.classList.add('thumbnail');
-                //     //         videoThumbnail.appendChild(videoElement);
-                //     //     }
-                //     // };
-
-                //     // Change handler for photo input
-                //     document.getElementById('photoInput').onchange = function (event) {
-                //         console.log('Photos selected');
-                //         const files = event.target.files;
-                //         const photoThumbnails = document.getElementById('photoThumbnails');
-                //         console.log(photoThumbnails)
-                //         photoThumbnails.innerHTML = '';
-                //         Array.from(files).forEach(file => {
-                //             const imgElement = document.createElement('img');
-                //             imgElement.src = URL.createObjectURL(file);
-                //             console.log(file)
-                //             imgElement.classList.add('thumbnail');
-                //             photoThumbnails.appendChild(imgElement);
-                //         });
-                // document.getElementById('continueBtn').hidden = files.length < 5;
-                //     };
-                // };
-
-
-                // =====================pricing details ==============
-                // document.getElementById('addPricingDetailsBtn').addEventListener('click', function () {
-                //         var additionalPricing = document.querySelector('.additional-pricing');
-                //         additionalPricing.classList.add('show');
-                //     });
-
-                //     document.getElementById('propertyDescription').addEventListener('input', function () {
-                //         var charCount = this.value.length;
-                //         document.getElementById('charCount').innerText = charCount + '/5000';
-                //     });
-
-                //     document.getElementById('closeAlert').addEventListener('click', function () {
-                //         var alertBox = document.getElementById('photoAlert');
-                //         alertBox.style.opacity = '0';
-                //         alertBox.style.height = '0';
-                //         setTimeout(function () {
-                //             alertBox.style.display = 'none';
-                //         }, 500);
-                //     });
             </script>
 
 

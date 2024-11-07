@@ -345,3 +345,9 @@ body {
     background-color: #007bff;
     color: white;
 }
+
+#photoThumbnails img {
+    margin-top: 10px;
+    height: 200px;
+    width: 200px;
+}
