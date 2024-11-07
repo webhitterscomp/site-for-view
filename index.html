@@ -1,1311 +1,716 @@
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Modify Profile</title>
+    <title>Property Details</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+   
 </head>
 
 <body>
-    <div class="d-flex flex-column flex-md-row">
-        <div class="sidebar">
-            <div class="text-center ">
-                <img alt="User profile picture" class="rounded-circle" height="100" src="https://placehold.co/100x100"
-                    width="100" />
-                <h2>Nakul Rana</h2>
-                <p>Master User</p>
-                <button class="btn btn-secondary btn-sm" onclick="showSection('profile')">Modify</button>
-            </div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-block d-md-none "
-                style="background-color: #2c3e50 !important;">
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- ====================for mobile navbar=============== -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('listings')"> All Property</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('projects')">Projects</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('fslBooking')">FSL Booking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('manageBoss')"> MANAGE PRODUCTS</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('allResponses')">All Responses</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('manageSubscriptions')">Manage
-                                Subscriptions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('managePayments')">Manage Payments</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('subscriptionStatus')">Subscription
-                                Status</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('creditUsageHistory')">Credit Usage
-                                History</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('upgradeHistory')">Upgrade History</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('manageSubUsers')">Manage Sub users
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('omniAdsPerformance')">Omni Ads
-                                Performance</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('getLeads')">Get Leads</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('myProfile')">My Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('changePassword')">Change Password</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('optOutDealerResponse')">Opt out Dealer
-                                Response</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('banners')">Banners</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleNavClick('manageResponses')">Manage
-                                Responses</a>
-                        </li>
-                    </ul>
-
-                </div>
-            </nav>
-
-            <!-- ================main  navbar===================== -->
-            <nav class="d-none d-md-block">
-                <!-- <h3>Dashbord</h3> -->
-                <a class="nav-link active" href="#" onclick="showSection('profile')">Modify Profile</a>
-                <a class="nav-link" href="#" onclick="handleNavClick('listings')"> All Property</a>
-                <a class="nav-link" href="#" onclick="showSection('projects')">Projects</a>
-                <a class="nav-link" href="#" onclick="showSection('fslBooking')">FSL Booking</a>
-                <a class="nav-link" href="#" onclick="showSection('manageBoss')"> Manage Product </a>
-                <a class="nav-link" href="#" onclick="showSection('allResponses')">All Responses</a>
-                <a class="nav-link" href="#" onclick="showSection('manageSubscriptions')">Manage Subscriptions</a>
-                <a class="nav-link" href="#" onclick="showSection('managePayments')">Manage Payments</a>
-                <a class="nav-link" href="#" onclick="showSection('subscriptionStatus')">Subscription Status</a>
-                <a class="nav-link" href="#" onclick="showSection('creditUsageHistory')">Credit Usage History</a>
-                <a class="nav-link" href="#" onclick="showSection('upgradeHistory')">Upgrade History</a>
-                <a class="nav-link" href="#" onclick="showSection('manageSubUsers')">Manage Sub users </a>
-                <a class="nav-link" href="#" onclick="showSection('omniAdsPerformance')">Omni Ads Performance</a>
-                <a class="nav-link" href="#" onclick="showSection('getLeads')">Get Leads</a>
-                <a class="nav-link" href="#" onclick="showSection('myProfile')">My Profile</a>
-                <a class="nav-link" href="#" onclick="showSection('shortlist')">Shortlist</a>
-                <a class="nav-link" href="#" onclick="showSection('myLeads')">My Leads</a>
-                <a class="nav-link" href="#" onclick="showSection('changePassword')">Change Password</a>
-                <a class="nav-link" href="#" onclick="showSection('optOutDealerResponse')">Opt out Dealer Response</a>
-                <a class="nav-link" href="#" onclick="showSection('banners')">Banners</a>
-                <a class="nav-link" href="#" onclick="showSection('manageResponses')">Manage Responses</a>
-            </nav>
-        </div>
-        <div class="content flex-grow-1">
-            <div class="d-md-flex justify-content-between align-items-center mb-4">
-                <p class="m-0">Last Visited: 12:29 PM | 21 Oct, 2024</p>
-                <a href="#">LEAD SEARCH</a>
-                <a href="#">BUY OUR SERVICES</a>
-                <a href="#">POST A PROPERTY</a>
-                <a href="#">CUSTOMER SERVICE</a>
-            </div>
-            <div class="overflow-hidden">
-                <div id="profile" class="section ">
-                    <h1>Modify Profile</h1>
-                    <p>Home &gt; Modify Profile</p>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Your Contact Details</h5>
-                            <p class="card-text">(This is where people interested in your property will contact you)</p>
-                            <form>
-                                <div class="mb-3">
-                                    <label class="form-label" for="userType">You are </label>
-                                    <input class="form-control" id="userType" type="text" value="Dealer" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="name">Name</label>
-                                    <input class="form-control" id="name" type="text" value=""
-                                        placeholder="Your Name" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="email">Email ID</label>
-                                    <input class="form-control" id="email" type="email" c placeholder="Email here"
-                                        value="" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="companyName">Company Name</label>
-                                    <input class="form-control" id="companyName" type="text" placeholder="Company"
-                                        value="" />
-                                    <a href="#">Change</a>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="phoneNumber1">Phone Number</label>
-                                    <div class="input-group">
-                                        <select class="form-select border" id="phoneNumber1Code">
-                                            <option selected="">+91 IND</option>
-                                        </select>
-                                        <input class="form-control" id="phoneNumber1" type="text" value="   " />
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" id="whatsappCheck" type="checkbox" />
-                                        <label class="form-check-label" for="whatsappCheck">Allow buyers to WhatsApp me
-                                            on
-                                            this number</label>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="phoneNumber2">Phone Number</label>
-                                    <div class="input-group">
-                                        <select class="form-select border" id="phoneNumber2Code">
-                                            <option selected="">+91 IND</option>
-                                        </select>
-                                        <input class="form-control" id="phoneNumber2" placeholder="Phone Number"
-                                            type="text" />
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="phoneNumber3">Phone Number</label>
-                                    <div class="input-group">
-                                        <select class="form-select border" id="phoneNumber3Code">
-                                            <option selected="">+91 IND</option>
-                                        </select>
-                                        <input class="form-control" id="phoneNumber3" placeholder="Phone Number"
-                                            type="text" />
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="companyUrl">Company URL</label>
-                                    <input class="form-control" id="companyUrl" placeholder="Company URL" type="text" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="companyProfile">Company Profile</label>
-                                    <textarea class="form-control" id="companyProfile" placeholder="Company Profile"
-                                        rows="3"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="address">Address</label>
-                                    <input class="form-control" id="address" type="text" placeholder="Address"
-                                        value="" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="landline">Landline No</label>
-                                    <input class="form-control" id="landline" placeholder="Landline No" type="text" />
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <p>Current State: Delhi</p>
-                                        <p>Current Address: New Delhi</p>
-                                    </div>
-                                    <div>
-                                        <p>Current City: Central Delhi</p>
-                                        <p>GSTIN Number:</p>
-                                    </div>
-                                </div>
-                                <p>Note: These details will be used to compute GST when you make a purchase. To edit GST
-                                    related details contact email@132.com</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" id="updatesCheck" type="checkbox" />
-                                    <label class="form-check-label" for="updatesCheck">Subscribe For Updates From
-                                        xxxxxx</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" id="promotionalCheck" type="checkbox" />
-                                    <label class="form-check-label" for="promotionalCheck">Other Promotional
-                                        Mailers</label>
-                                </div>
-                                <p>By clicking below you agree to <a href="#">Terms and Conditions</a></p>
-                                <button class="btn btn-primary" type="submit">Save Profile</button>
-                            </form>
-                        </div>
+    <div class="container mt-5" id="containerId">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="step active " id="step1">
+                        <span class="circle"></span> Basic Details <br>
+                    </div>
+                    <div class="step" id="step2">
+                        <span class="circle"></span> Location Details <br>
+                    </div>
+                    <div class="step" id="step3">
+                        <span class="circle"></span> Property Profile <br>
+                    </div>
+                    <div class="step" id="step4">
+                        <span class="circle"></span> Videos & Photos <br>
+                    </div>
+                    <div class="step" id="step5">
+                        <span class="circle"></span> Pricing & Others <br>
+                    </div>
+                    <div class="step" id="step6">
+                        <span class="circle"></span> Completed <br>
                     </div>
                 </div>
+                <div class="property-score">
+                    <div class="circle">14%</div>
+                    <p>Property Score</p>
+                    <small>Better your property score, greater your visibility</small>
+                </div>
             </div>
-            <!-- <div class="overflow-hidden target" id="target1">
-        
-            </div> -->
+            <div class="col-md-9 shadow " style="border-radius: 10px;">
+                <div class="content fade-in p-2" id="content">
 
-            <div class="overflow-hidden">
-                <div id="listings" class="section hidden border">
-                    <div class="navbar">
+                    <h1>Welcome back Nakul Rana,<br>Fill out basic details</h1>
+                    <h2>I'm looking to</h2>
+                    <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active">
+                            <input class="btn btn-outline-dark" type="radio" name="options" id="option1" checked> Sell
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option2"> Rent / Lease
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option3"> PG
+                        </label>
+                    </div> -->
+                    <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary  " id="option1" >
+                            <input class="btn btn-outline-dark" type="radio" name="option1" id="option1" checked> Sell
+                        </label>
+                        <label class="btn btn-secondary" id="option2">
+                            <input type="radio" name="options" id="option2"> Rent / Lease
+                        </label>
+                        <label class="btn btn-secondary" id="option3">
+                            <input type="radio" name="options" id="option3"> PG
+                        </label>
 
-                        <a href="#">
-                            LEAD SEARCH
-                        </a>
-                        <a href="#">
-                            BUY OUR SERVICES
-                        </a>
-                        <a href="#">
-                            POST A PROPERTY
-                        </a>
-                        <a href="#">
-                            CUSTOMER SERVICE
-                        </a>
+                    </div> -->
+
+
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary" id="rentBtn1">
+                            <input type="radio" name="options" id="rentBtn1" checked> Sell
+                        </label>
+                        <label class="btn btn-secondary" id="rentBtn2">
+                            <input type="radio" name="options" id="rentRadio2"> Rent / Lease
+                        </label>
+                        <label class="btn btn-secondary" id="pgBtn2">
+                            <input type="radio" name="options" id="pgRadio2"> PG
+                        </label>
+                    </div>
+
+
+                    <!-- <div class="btn-group" type="radio-btn" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-dark  " id="sell">Sell</button>
+                        <button type="button" class="btn btn-outline-dark" id="rent">Rent / Lease</button>
+                        <button type="button" class="btn btn-outline-dark" id="pg">PG</button>
+                    </div> -->
+                    <h2>What kind of property do you have?</h2>
+                    <div class="row p-3 ">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="propertyType" id="residential" checked>
+                            <label class="form-check-label" for="residential">
+                                Residential
+                            </label>
+                        </div>
+                        <div class="form-check ml-2">
+                            <input class="form-check-input" type="radio" name="propertyType" id="commercial">
+                            <label class="form-check-label" for="commercial">
+                                Commercial
+                            </label>
+                        </div>
                     </div>
                     <div class="container">
-                        <div class="mt-3">
-                            <a href="#">
-                                Home
-                            </a>
-                            &gt;
-                            <a href="#">
-                                Manage Responses
-                            </a>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-3">
-                                <label>
-                                    DURATION
+                        <div class="btn-group btn-group-toggle   row" role="group" aria-label="Property type">
+                            <div class="col-md-12 mt-3 btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary" id="option1Label">
+                                    <input type="radio" name="options" id="option1Label" checked>
+                                    Flat/Apartment
                                 </label>
-                                <select class="form-control">
-                                    <option>
-                                        All(Last 6 Months)
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label>
-                                    Enter Locality
+                                <label class="btn btn-secondary" id="option2">
+                                    <input type="radio" name="options" id="option2"> Independent House / Villa
                                 </label>
-                                <input class="form-control" type="text" />
-                            </div>
-                            <div class="col-md-3">
-                                <label>
-                                    PRODUCT
+                                <label class="btn btn-secondary" id="option3">
+                                    <input type="radio" name="options" id="option3"> Independent / Builder Floor
                                 </label>
-                                <select class="form-control">
-                                    <option>
-                                        All
-                                    </option>
-                                </select>
+
+
                             </div>
+                        </div>
+                        <div class="btn-group btn-group-toggle mt-md-0 mt-3 row" role="group" aria-label="Property type">
+                            <div class="col-md-12 mt-3 btn-group btn-group-toggle" data-toggle="buttons">
 
-
-                            <div class="col-md-3">
-                                <label>
-                                    More Filters
+                                <label class="btn btn-secondary" id="option5">
+                                    <input type="radio" name="options" id="option5"> Independent House / Villa
                                 </label>
-                                <select class="form-control">
-                                    <option>
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label>
-                                    SORT
+                                <label class="btn btn-secondary" id="option6">
+                                    <input type="radio" name="options" id="option6"> Independent / Builder Floor
                                 </label>
-                                <select class="form-control">
-                                    <option>
-                                        Latest First
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label>
-                                    LEAD SCORE
+                                <label class="btn btn-secondary" id="option7 ">
+                                    <input type="radio" name="options" id="option7"> Plot / Land
                                 </label>
-                                <select class="form-control">
-                                    <option>
-                                        All
-                                    </option>
-                                </select>
                             </div>
+                        </div> 
 
-                        </div>
-                        <div class="content mt-3 border ">
-                            <div class="d-flex align-content-center" style="gap: 5px;">
-                                <input style="    margin-bottom: .5rem;" type="checkbox" id="id-2" name="id-2"
-                                    value="Bike">
-                                <label for="id-2" style="font-size: larger;">1st Land/Plot for Sale in Kamla Nagar,
-                                    Rohtak
-                                    <span class="badge">
-                                        Plain
-                                    </span></label><br>
-                            </div>
-
-                            <p>
-                                Price: Rs5 Lac | Plot Area: 200 sq.ft.
-                            </p>
-                            <p>
-                                V78278969:
-                                <span class="status">
-                                    Active
-                                </span>
-                                | Posted On: 05 Nov 2024
-                                <span class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 85%;">
-                                    </div>
-                                </span>
-                                85 % Complete
-                            </p>
-                            <p>
-                                Expiry On: 05 Jan 2025
-                            </p>
-                            <p class="details">
-                                Summary view: 0 | Details view: 0 | Listing Price: 0 Credits
-                                <a href="#">
-                                    Upgrade
-                                </a>
-                            </p>
-                            <p class="details">
-                                <i class="fas fa-lightbulb">
-                                </i>
-                                Need more buyers/tenants for your property, simply
-                                <a href="#">
-                                    Get Leads
-                                </a>
-                            </p>
-                        </div>
-                        <div class="content mt-3 border">
-                            <div  class="d-flex align-content-center" style="gap:5px;">
-                                <input style="margin-bottom:0.5rem;" type="checkbox" id="id-1" name="id-1" value="Bike">
-                                <label for="id-1" style="font-size: larger;">2nd Land/Plot for Sale in Kamla Nagar,
-                                    Rohtak
-                                    <span class="badge">
-                                        Plain
-                                    </span></label><br>
-                            </div>
-
-                            <p>
-                                Price: Rs5 Lac | Plot Area: 200 sq.ft.
-                            </p>
-                            <p>
-                                V78278969:
-                                <span class="status">
-                                    Active
-                                </span>
-                                | Posted On: 05 Nov 2024
-                                <span class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 85%;">
-                                    </div>
-                                </span>
-                                85 % Complete
-                            </p>
-                            <p>
-                                Expiry On: 05 Jan 2025
-                            </p>
-                            <p class="details">
-                                Summary view: 0 | Details view: 0 | Listing Price: 0 Credits
-                                <a href="#">
-                                    Upgrade
-                                </a>
-                            </p>
-                            <p class="details">
-                                <i class="fas fa-lightbulb">
-                                </i>
-                                Need more buyers/tenants for your property, simply
-                                <a href="#">
-                                    Get Leads
-                                </a>
-                            </p>
-                        </div>
                     </div>
+                    <button type="button" class="btn btn-primary mt-4" id="continueBtn">Continue</button>
                 </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="projects" class="section hidden">
-                    <table class="table table-bordered table-responsive">
-                        <thead>
-                            <tr style="background-color:  rgb(235, 242, 250);">
-                                <th>S.No</th>
-                                <th>Promoter Name</th>
-                                <th>Project Name</th>
-                                <th>RERA Reg.No.</th>
-                                <th>Project Type</th>
-                                <th>District</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>SMAP BUILDERS AND DEVELOPERS PRIVATE LIMITED</td>
-                                <td>PALM RESIDENCY</td>
-                                <td>UPRERAPRJ12524</td>
-                                <td>Residential</td>
-                                <td>Lucknow</td>
-                                <td>01-04-2017</td>
-                                <td>31-03-2019</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>G R CONSTRUCTIONS</td>
-                                <td>PARK ROYAL APARTMENT</td>
-                                <td>UPRERAPRJ13276</td>
-                                <td>Residential</td>
-                                <td>Lucknow</td>
-                                <td>01-06-2013</td>
-                                <td>30-08-2016</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>HEBE INFRASTRUCTURE PRIVATE LIMITED (MAHAGUN GROUP)</td>
-                                <td>MAHAGUN MANTRA II</td>
-                                <td>UPRERAPRJ1870</td>
-                                <td>Residential</td>
-                                <td>Gautam Buddha Nagar</td>
-                                <td>01-07-2014</td>
-                                <td>29-12-2021</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>JADON INFRATECH</td>
-                                <td>VAISHNO CRYSTAL</td>
-                                <td>UPRERAPRJ839360</td>
-                                <td>Residential</td>
-                                <td>Aligarh</td>
-                                <td>11-03-2019</td>
-                                <td>09-09-2024</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>O P INFRAESTATE PVT LTD</td>
-                                <td>GRAND FORT</td>
-                                <td>UPRERAPRJ11302</td>
-                                <td>Residential</td>
-                                <td>Agra</td>
-                                <td>20-04-2014</td>
-                                <td>31-12-2018</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+
             </div>
 
-            <div class="overflow-hidden">
-                <div id="fslBooking" class="section hidden">
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+                crossorigin="anonymous"></script>
+
+            <script>
+                let currentStep = 1;
+
+                // Continue button click listener
+                document.getElementById('continueBtn').addEventListener('click', function () {
+                    if (currentStep < 6) {
+                        document.getElementById(`step${currentStep}`).classList.remove('active');
+                        document.getElementById(`step${currentStep}`).classList.add('completed');
+                        updateSidebarLine();
+                        currentStep++;
+                        document.getElementById(`step${currentStep}`).classList.add('active');
+                        updateContent();
+
+                    }
+                });
+
+                // Back button click listener
+                // document.getElementById('backBtn').addEventListener('click', function () {
+                //     if (currentStep > 1) {
+                //         document.getElementById(`step${currentStep}`).classList.remove('active');
+                //         currentStep--;
+                //         document.getElementById(`step${currentStep}`).classList.add('active');
+                //         updateContent();
+                //         updateSidebarLine();
+                //         updateButtonStates();
+                //     }
+                // });
+
+                function updateContent() {
+                    const content = document.getElementById('content');
+                    content.classList.remove('fade-in');
+                    void content.offsetWidth; // Trigger reflow to restart animation
+                    content.classList.add('fade-in');
+
+                    // Reset the HTML content and add buttons dynamically
+                    let contentHtml = '';
+
+                    switch (currentStep) {
+                        case 2:
+                            contentHtml = `
+                 <div class="container mt-4">
+  <div class="row">
+    <!-- Location Information -->
+    <div class="col-md-8">
+      <h3 class="mb-4">Where is your property located?</h3>
+      
+      <!-- Address Input -->
+      <div class="mb-3">
+        <label for="address" class="form-label">Property Address</label>
+        <input class="form-control shadow-sm" type="text" name="address" id="address" placeholder="Enter the full address of the property" required>
+      </div>
+      
+      <!-- City and State in one row -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input class="form-control shadow-sm" type="text" name="city" id="city" placeholder="Enter the city where the property is located" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="state" class="form-label">State/Province</label>
+            <input class="form-control shadow-sm" type="text" name="state" id="state" placeholder="Enter the state or province" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neighborhood Input (Optional) -->
+      <div class="row">
+      <div class="mb-3 col-md-6">
+        <label for="neighborhood" class="form-label">  <span class="text-muted">(Optional)</span></label>
+        <input class="form-control shadow-sm" type="text" name="neighborhood" id="neighborhood" placeholder="Enter the neighborhood (if applicable)">
+      </div>
+      
+      <!-- Postal Code Input -->
+      <div class="mb-3 col-md-6">
+        <label for="postalCode" class="form-label">Postal Code</label>
+        <input class="form-control shadow-sm" type="text" name="postalCode" id="postalCode" placeholder="Enter the postal or zip code" required>
+      </div>
+       <div/>
+
+      <!-- Google Maps Search (Optional) -->
+      <div class="mt-4 m-3">
+        <label for="googleMapsLocation" class="form-label">Search on Google Maps</label>
+        <input class="form-control shadow-sm" type="text" id="googleMapsLocation" placeholder="Search for location on Google Maps" onfocus="this.select();">
+        <small class="form-text text-muted">Click and start typing to search for a location.</small>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
-                    <!-- Header -->
-                    <header class="header">
-                        <h1>Property Maintenance - Field Service Lightning</h1>
-                        <p>Efficiently manage service requests, property maintenance, and technician schedules</p>
-                    </header>
-
-                    <!-- Property Details Section -->
+</div>
 
 
-                    <!-- Service Requests Section -->
-                    <div class="container my-5">
-                        <h2 class="mb-4">Open Service Requests</h2>
-                        <div class="row">
-                            <!-- Service Request Card 1 -->
-                            <div class="col-md-4">
-                                <div class="card service-card">
-                                    <div class="card-body">
-                                        <h5 class="card-header">Request #1111</h5>
-                                        <p><strong>Status:</strong> Pending</p>
-                                        <p><strong>Issue:</strong> HVAC Maintenance</p>
-                                        <p><strong>Requested By:</strong> Ramesh Kumar</p>
-                                        <p><strong>Scheduled Date:</strong> 15/10/2024</p>
-                                        <button class="btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Service Request Card 2 -->
-                            <div class="col-md-4">
-                                <div class="card service-card">
-                                    <div class="card-body">
-                                        <h5 class="card-header">Request #1112</h5>
-                                        <p><strong>Status:</strong> In Progress</p>
-                                        <p><strong>Issue:</strong> Plumbing Issue</p>
-                                        <p><strong>Requested By:</strong> Ayesha Patel</p>
-                                        <p><strong>Scheduled Date:</strong> 16/10/2024</p>
-                                        <button class="btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Service Request Card 3 -->
-                            <div class="col-md-4">
-                                <div class="card service-card">
-                                    <div class="card-body">
-                                        <h5 class="card-header">Request #1113</h5>
-                                        <p><strong>Status:</strong> Completed</p>
-                                        <p><strong>Issue:</strong> Electrical Repair</p>
-                                        <p><strong>Requested By:</strong> Sameer Verma</p>
-                                        <p><strong>Scheduled Date:</strong> 10/10/2024</p>
-                                        <button class="btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="manageBoss" class="section hidden">
+                `;
+                            break;
+                        case 3:
+                            contentHtml = `
+                    
+        
+       <h2>Tell us about your property</h2>
+<form id="propertyForm">
 
-                    <div class="content">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="#">
-                                        Home
-                                    </a>
-                                </li>
-                                <li aria-current="page" class="breadcrumb-item active">
-                                    Manage BOSS
-                                </li>
-                            </ol>
-                        </nav>
-                        <h2>
-                            Your plan status
-                        </h2>
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <span>
-                                    Limited contacts
-                                </span>
-                                <span class="badge bg-secondary text-light">
-                                    Free Plan
-                                </span>
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="text-danger">
-                                        You have exhausted your free contacts
-                                    </span>
-                                    <span class="text-muted">
-                                        0 left
-                                    </span>
-                                </div>
-                                <div class="progress mt-3" style="height: 5px;">
-                                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="100"
-                                        class="progress-bar bg-danger" role="progressbar" style="width: 100%;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="alert alert-warning d-flex align-items-center" role="alert">
-                            <i class="fas fa-exclamation-circle me-2">
-                            </i>
-                            <div>
-                                You exhausted your Free plan to contact owners. Get BOSS now to contact more owners.
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body d-flex align-items-center justify-content-between">
-                                <img alt="Illustration of a person using a phone and computer" class="me-3" height="100"
-                                    src="https://storage.googleapis.com/a1aa/image/nWMfrzo7AHRtWiwvA0ZqeffIQd3zMKAAnGQSkwEgeUoH0JPdC.jpg"
-                                    width="100" />
-                                <div class="p-2">
-                                    <h5 class="card-title">
-                                        Introducing
-                                        <span class="text-primary">
-                                            BOSS
-                                            <sup>
-                                                2
-                                            </sup>
-                                        </span>
-                                    </h5>
-                                    <p class="card-text">
-                                        Unlock up to 50 owners contact every month and grow business
-                                    </p>
-                                </div>
-                                <a class="btn btn-primary ms-auto" href="#">
-                                    View Plans
-                                    <i class="fas fa-arrow-right">
-                                    </i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer">
-                        <p class="text-justify">
-                            Note: Above data is furnished purely to display extra impressions and listing views accrued
-                            by our clients
-                            on purchase of Featured dealer pack on xxxxxxxxx platform. This shouldn't be confused as
-                            total benefits
-                            received from all purchases made on xxxxxxxxx. Counts are accounted only when a user
-                            (buyer/tenants/owners)
-                            is
-                            able to perceive the details of the featured dealer (in case of dealer impression) or their
-                            listing (in case
-                            of listing views) through the view port of the device they are using to access the platform.
-                        </p>
-                        <p>
-                            A xxxxxxxxx.com group website
-                        </p>
-                        <p>
-                            Copyright © 2024 ------------------Ltd. All rights reserved
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="manageResponses" class="section hidden">
+    <!-- Area Details -->
+    <div class="mb-3 row">
+        <label for="areaDetails" class="form-label col-md-4">Add Area Details <i class="fas fa-question-circle" data-bs-toggle="tooltip" title="Enter plot area in square feet"></i></label>
+        <div class="input-group col-md-8">
+            <input type="text" class="form-control col-md-10" id="areaDetails" placeholder="Plot Area">
+            <select class="form-select form-control col-md-2">
+                <option value="sq.ft.">sq.ft.</option>
+            </select>
+        </div>
+    </div>
+    <hr/>
 
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-
-                        <div>
-                            All Responses <span> (7)</span>
-                        </div>
-                        <div>
-                            Queries <span> (2)</span>
-                        </div>
-                        <div>
-                            Viewed Contact
-                            <span> (5) </span>
-                        </div>
-                        <button class="btn btn-primary btn-download">DOWNLOAD RESPONSES</button>
-                    </div>
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div>
-                                <span>Prashant</span> <span class="text-muted">(Dealer)</span>
-                            </div>
-                            <div>
-                                <span class="rating">4.0 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="far fa-star"></i></span>
-                                <a href="#" class="text-primary">View Behaviour</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p><strong>Interested in:</strong> (RWA Jalvayu Towers), (RWA Jalvayu Vihar),
-                                        (Kes...</p>
-                                    <p><strong>Planning to Buy within:</strong> NA</p>
-                                    <p><strong>Status:</strong> <a href="#" class="text-primary">New Update
-                                            Status</a></p>
-                                </div>
-                                <div class="col-md-4 text-end">
-                                    <p><strong>Query on:</strong> 02 Feb, 2021</p>
-                                    <p><strong>Focus Area:</strong> 2BHK, Rs. 50 Lacs to 60 Lacs, Sector-47 Noida
-                                    </p>
-                                    <p><strong>Interested in Site Visit?:</strong> NA</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <a href="#" class="text-primary">Give Feedback :</a>
-                                    <span class="feedback-icons">
-                                        <i class="far fa-smile"></i>
-                                        <i class="far fa-meh"></i>
-                                        <i class="far fa-frown"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    <a href="#" class="text-primary">View other requirements of this lead</a>
-                                    <a href="#" class="text-primary">Report as Broker</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mt-2">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div>
-                                <span>rawat</span> <span class="text-muted">(Dealer)</span>
-                            </div>
-                            <div>
-                                <span class="rating">3.0 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i><i class="far fa-star"></i><i
-                                        class="far fa-star"></i></span>
-                                <a href="#" class="text-primary">View Behaviour</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p><strong>Interested in:</strong> (3.8 Crore | 2700 Sqft), (Amrapali Eden
-                                        park), (3.9...</p>
-                                    <p><strong>Planning to Buy within:</strong> NA</p>
-                                    <p><strong>Status:</strong> <a href="#" class="text-primary">New Update
-                                            Status</a></p>
-                                </div>
-                                <div class="col-md-4 text-end">
-                                    <p><strong>Viewed Contact on:</strong> 01 Feb, 2021</p>
-                                    <p><strong>Focus Area:</strong> 3BHK, Rs. 75 Lacs to 90 Lacs, Sector-50 Noida
-                                    </p>
-                                    <p><strong>Interested in Site Visit?:</strong> NA</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <a href="#" class="text-primary">Give Feedback :</a>
-                                    <span class="feedback-icons">
-                                        <i class="far fa-smile"></i>
-                                        <i class="far fa-meh"></i>
-                                        <i class="far fa-frown"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    <a href="#" class="text-primary">View other requirements of this lead</a>
-                                    <a href="#" class="text-primary">Report as Broker</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="allResponses" class="section hidden">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-
-                        <div>
-                            All Responses <span> (7)</span>
-                        </div>
-                        <div>
-                            Queries <span> (2)</span>
-                        </div>
-                        <div>
-                            Viewed Contact
-                            <span> (5) </span>
-                        </div>
-                        <button class="btn btn-primary btn-download">DOWNLOAD RESPONSES</button>
-                    </div>
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div>
-                                <span>Prashant</span> <span class="text-muted">(Dealer)</span>
-                            </div>
-                            <div>
-                                <span class="rating">4.0 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="far fa-star"></i></span>
-                                <a href="#" class="text-primary">View Behaviour</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p><strong>Interested in:</strong> (RWA Jalvayu Towers), (RWA Jalvayu Vihar),
-                                        (Kes...)</p>
-                                    <p><strong>Planning to Buy within:</strong> NA</p>
-                                    <p><strong>Status:</strong> <a href="#" class="text-primary">New Update
-                                            Status</a></p>
-                                </div>
-                                <div class="col-md-4 text-end">
-                                    <p><strong>Query on:</strong> 02 Feb, 2021</p>
-                                    <p><strong>Focus Area:</strong> 2BHK, Rs. 50 Lacs to 60 Lacs, Sector-47 Noida
-                                    </p>
-                                    <p><strong>Interested in Site Visit?:</strong> NA</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <a href="#" class="text-primary">Give Feedback :</a>
-                                    <span class="feedback-icons">
-                                        <i class="far fa-smile"></i>
-                                        <i class="far fa-meh"></i>
-                                        <i class="far fa-frown"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    <a href="#" class="text-primary">View other requirements of this lead</a>
-                                    <a href="#" class="text-primary">Report as Broker</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mt-2">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div>
-                                <span>rawat</span> <span class="text-muted">(Dealer)</span>
-                            </div>
-                            <div>
-                                <span class="rating">3.0 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i><i class="far fa-star"></i><i
-                                        class="far fa-star"></i></span>
-                                <a href="#" class="text-primary">View Behaviour</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p><strong>Interested in:</strong> (3.8 Crore | 2700 Sqft), (Amrapali Eden
-                                        park), (3.9...)</p>
-                                    <p><strong>Planning to Buy within:</strong> NA</p>
-                                    <p><strong>Status:</strong> <a href="#" class="text-primary">New Update
-                                            Status</a></p>
-                                </div>
-                                <div class="col-md-4 text-end">
-                                    <p><strong>Viewed Contact on:</strong> 01 Feb, 2021</p>
-                                    <p><strong>Focus Area:</strong> 3BHK, Rs. 75 Lacs to 90 Lacs, Sector-50 Noida
-                                    </p>
-                                    <p><strong>Interested in Site Visit?:</strong> NA</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <a href="#" class="text-primary">Give Feedback :</a>
-                                    <span class="feedback-icons">
-                                        <i class="far fa-smile"></i>
-                                        <i class="far fa-meh"></i>
-                                        <i class="far fa-frown"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    <a href="#" class="text-primary">View other requirements of this lead</a>
-                                    <a href="#" class="text-primary">Report as Broker</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="manageSubscriptions" class="section hidden">
-
-                    <!-- Page Header -->
-                    <div class="row mb-4">
-                        <div class="col">
-                            <h1 class="text-center">Manage Your Subscriptions</h1>
-                            <p class="text-center text-muted">View and manage your active subscriptions</p>
-                        </div>
-                    </div>
-
-                    <!-- Subscription List -->
-                    <div class="card shadow  table-responsive">
-                        <div class="card-header">
-                            <h5>Active Subscriptions</h5>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Subscription</th>
-                                        <th scope="col">Next Payment</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Subscription 1 -->
-                                    <tr>
-                                        <td>Premium Plan</td>
-                                        <td>Dec 1, 2024</td>
-                                        <td><span class="subscription-status active">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i>
-                                                Update</button>
-                                            <button class="btn btn-danger btn-sm"><i class="fas fa-times"></i>
-                                                Cancel</button>
-                                        </td>
-                                    </tr>
-                                    <!-- Subscription 2 -->
-                                    <tr>
-                                        <td>Basic Plan</td>
-                                        <td>Nov 15, 2024</td>
-                                        <td><span class="subscription-status cancelled">Cancelled</span></td>
-                                        <td>
-                                            <button class="btn btn-secondary btn-sm" disabled><i
-                                                    class="fas fa-edit"></i> Update</button>
-                                            <button class="btn btn-info btn-sm" disabled><i class="fas fa-undo"></i>
-                                                Reactivate</button>
-                                        </td>
-                                    </tr>
-                                    <!-- Subscription 3 -->
-                                    <tr>
-                                        <td>Enterprise Plan</td>
-                                        <td>Jan 10, 2025</td>
-                                        <td><span class="subscription-status active">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i>
-                                                Update</button>
-                                            <button class="btn btn-danger btn-sm"><i class="fas fa-times"></i>
-                                                Cancel</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- Subscription Options -->
-                    <div class="card mt-4 shadow">
-                        <div class="card-header">
-                            <h5>Subscription Options</h5>
-                        </div>
-                        <div class="card-body">
-                            <p>Not seeing a plan that suits you? You can always choose to upgrade or downgrade your
-                                subscription.</p>
-                            <button class="btn btn-primary btn-lg"><i class="fas fa-arrow-up"></i> Upgrade
-                                Plan</button>
-                            <button class="btn btn-secondary btn-lg"><i class="fas fa-arrow-down"></i> Downgrade
-                                Plan</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="managePayments" class="section hidden">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card p-4">
-                                <h2 class="mb-4">Manage Payments</h2>
-
-                                <!-- Search and Add Payment Section -->
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" placeholder="Search Payments">
-                                    </div>
-                                    <div class="col-md-6 text-right">
-                                        <button class="btn btn-primary" data-toggle="modal"
-                                            data-target="#addPaymentModal">
-                                            <i class="fas fa-plus"></i> Add Payment
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Payments Table -->
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Payment Date</th>
-                                                <th>Amount</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>2024-10-15</td>
-                                                <td>$250</td>
-                                                <td><span class="badge badge-success badge-custom">Completed</span></td>
-                                                <td class="table-action-btns">
-                                                    <button class="btn btn-info btn-sm" data-toggle="modal"
-                                                        data-target="#viewPaymentModal">View</button>
-                                                    <button class="btn btn-warning btn-sm" data-toggle="modal"
-                                                        data-target="#updatePaymentModal">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>2024-10-20</td>
-                                                <td>$500</td>
-                                                <td><span class="badge badge-warning badge-custom">Pending</span></td>
-                                                <td class="table-action-btns">
-                                                    <button class="btn btn-info btn-sm" data-toggle="modal"
-                                                        data-target="#viewPaymentModal">View</button>
-                                                    <button class="btn btn-warning btn-sm" data-toggle="modal"
-                                                        data-target="#updatePaymentModal">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="subscriptionStatus" class="section hidden">
-                    <div class="container mt-4 fade-in">
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="card1 border">
-                                    <div class="card-header card-header-blue">
-                                        Subscription Information
-                                    </div>
-                                    <div class="card-body">
-                                        <p><strong>Plan:</strong> Premium</p>
-                                        <p><strong>Start Date:</strong> January 1, 2024</p>
-                                        <p><strong>Renewal Date:</strong> January 1, 2025</p>
-                                        <p><strong>Status:</strong> Active</p>
-                                        <p><strong>Payment Method:</strong> Credit Card</p>
-                                        <p><strong>Amount:</strong> 999/year</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="card1">
-                                    <div class="card-header card-header-teal">
-                                        Subscription Progress
-                                    </div>
-                                    <div class="card-body">
-                                        <p><strong>Next Renewal in</strong></p>
-                                        <div class="progress mb-3">
-                                            <div class="progress-bar progress-bar-green progress-bar-animated"
-                                                role="progressbar" style="width: 50%;" aria-valuenow="50"
-                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <p><strong>Time Remaining:</strong> 6 months</p>
-                                        <button class="btn btn-yellow border shadow">Renew Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card1 fade-in">
-                            <div class="card-header card-header-grey">
-                                Subscription History
-                            </div>
-                            <div class="card-body">
-                                <p>January 1, 2024 - Subscription started. Plan: Premium</p>
-                                <p>December 1, 2023 - Payment received: $99.99</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="creditUsageHistory" class="section hidden border">
-
-                    <div class="row mb-3">
-                        <div class="col-md-3">
-                            <label for="startDate" class="form-label">Start Date:</label>
-                            <input type="text" class="form-control" id="startDate" value="01/09/18">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="endDate" class="form-label">End Date:</label>
-                            <input type="text" class="form-control" id="endDate" value="01/10/18">
-                        </div>
-                        <div class="col-md-3 d-flex align-items-end" style="    margin-bottom: 10px;">
-                            <button class="btn btn-primary w-100" onclick="showHistory()">Show History</button>
-                        </div>
-                    </div>
-                    <h4>Credit Usage Summary</h4>
-                    <div class=" ">
-
-                        <div class="row mb-4 border d-flex align-content-center  justify-content-between">
-                            <div class="col-md-2">
-                                <div class="summary-card">
-                                    <h5>Date</h5>
-                                    <div class="value" id="summaryDate">1/9/2018 - 1/10/2018</div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="summary-card">
-                                    <h5>Starting Credits</h5>
-                                    <div class="value" id="startingCredits">4612</div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="summary-card">
-                                    <h5>Added Credits</h5>
-                                    <div class="value positive" id="addedCredits">+30100</div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="summary-card">
-                                    <h5>Consumed Credits</h5>
-                                    <div class="value negative" id="consumedCredits">-230000</div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="summary-card">
-                                    <h5>Balance Credits</h5>
-                                    <div class="value" id="balanceCredits">32321</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4>Transaction History</h4>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Transaction ID</th>
-                                    <th>Credits Consumed</th>
-                                    <th>Actions</th>
-                                    <th>Product Type</th>
-                                    <th>Product ID</th>
-                                </tr>
-                            </thead>
-                            <tbody id="transactionHistory">
-                                <!-- Transactions will be populated here -->
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- ========================pending this section=============== -->
-            <div class="overflow-hidden">
-                <div id="upgradeHistory" class="section hidden">
-                    <h1>Upgrade History</h1>
-                    <p>Content for Upgrade History section.</p>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="manageSubUsers" class="section hidden">
-                    <h1>Manage Sub users 0</h1>
-                    <p>Content for Manage Sub users 0 section.</p>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="omniAdsPerformance" class="section hidden">
-                    <h1>Omni Ads Performance</h1>
-                    <p>Content for Omni Ads Performance section.</p>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="getLeads" class="section hidden">
-                    <h1>Get Leads</h1>
-                    <p>Content for Get Leads section.</p>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="myProfile" class="section hidden">
-                    <h1>My Profile</h1>
-                    <p>Content for My Profile section.</p>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="shortlist" class="section hidden">
-                    <h1>Shortlist</h1>
-                    <p>Content for Shortlist section.</p>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="myLeads" class="section hidden">
-                    <h1>My Leads</h1>
-                    <p>Content for My Leads section.</p>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="changePassword" class="section hidden">
-                    <h1>Change Password</h1>
-                    <p>Content for Change Password section.</p>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="optOutDealerResponse" class="section hidden">
-                    <h1>Opt out Dealer Response</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo porro rerum sequi sed delectus,
-                        dicta
-                        quibusdam ipsam aspernatur a incidunt aliquid debitis blanditiis quam cupiditate dolor minus
-                        quae
-                        corporis doloribus.</p>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div id="banners" class="section hidden">
-                    <h1>Banners</h1>
-                    <p>Content for Banners section.</p>
-                </div>
-            </div>
-
-
-            <div class="footer border">
-                <p>FOR QUERIES YOU CAN REACH US AT:</p>
-                <div class="d-md-flex justify-content-between">
-                    <div>
-                        <p>Call us at: 0000 00 0000</p>
-                        <p>For international numbers click <a href="#">here</a></p>
-                    </div>
-                    <div>
-                        <p>Mail us for Sales/Service/General Enquiries: <a
-                                href="mailto:services@xxxxxx.com">services@xxxxxx.com</a></p>
-                    </div>
-                    <div>
-                        <p>Request for Information: <a href="#">Request Info</a></p>
-                    </div>
-                </div>
-                <p>Office &amp; Locations: <a href="#">Click here</a> for Branch Address</p>
-                <p>To delete your account, <a href="#">click here</a></p>
+    <!-- Property Dimensions (Optional) -->
+    <div class="mb-3 row">
+        <label class="form-label col-md-4">Property Dimensions <span class="text-muted">(Optional)</span></label>
+        <div class="col-md-8">
+            <input type="text" class="form-control mb-2" placeholder="Length of plot (in Ft.)">
+            <input type="text" class="form-control" placeholder="Breadth of plot (in Ft.)">
+        </div>
+    </div>
+ <hr/>
+    <!-- Boundary Wall -->
+    <div class="mb-3 row">
+        <label class="form-label col-md-4">Is there a boundary wall around the property?</label>
+        <div class="col-md-8">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-secondary">
+                    <input type="radio" name="boundaryWall" id="rentBtn1"> Yes
+                </label>
+                <label class="btn btn-outline-secondary">
+                    <input type="radio" name="boundaryWall" id="rentBtn2"> No
+                </label>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.add('hidden');
-                section.classList.remove('fade-in', 'slide-in');
-            });
-            const activeSection = document.getElementById(sectionId);
-            activeSection.classList.remove('hidden');
-            activeSection.classList.add('slide-in');
-        }
-        function handleNavClick(section) {
-            // Call the function to show the respective section
-            showSection(section);
+     <hr/>
 
-            // Collapse the navbar
-            $('.navbar-collapse').collapse('hide');
-        }
+    <!-- Number of Open Sides -->
+    <div class="mb-3 row">
+        <label class="form-label col-md-4">No. of open sides <i class="fas fa-question-circle" data-bs-toggle="tooltip" title="How many sides of the property are open?"></i></label>
+        <div class="col-md-8">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-secondary">
+                    <input type="radio" name="openSides" id="side1" checked> 1
+                </label>
+                <label class="btn btn-outline-secondary">
+                    <input type="radio" name="openSides" id="side2"> 2
+                </label>
+                <label class="btn btn-outline-secondary">
+                    <input type="radio" name="openSides" id="side3"> 3
+                </label>
+                <label class="btn btn-outline-secondary">
+                    <input type="radio" name="openSides" id="side4"> 4
+                </label>
+            </div>
+        </div>
+    </div>
+     <hr/>
 
-        //    =================user creadit============
+    <!-- Construction Done -->
+    <div class="mb-3 row">
+        <label class="form-label col-md-4">Any construction done on this property?</label>
+        <div class="col-md-8">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-secondary">
+                    <input type="radio" name="constructionDone" id="constructionYes"> Yes
+                </label>
+                <label class="btn btn-outline-secondary">
+                    <input type="radio" name="constructionDone" id="constructionNo"> No
+                </label>
+            </div>
+        </div>
+    </div>
+     <hr/>
 
+    <!-- Possession By -->
+    <div class="mb-3 row">
+        <label for="possessionBy" class="form-label col-md-4">Possession By</label>
+        <div class="col-md-8">
+            <select class="form-select form-control col-md-4" id="possessionBy">
+                <option value="expected">Expected by</option>
+            </select>
+        </div>
+    </div>
+     <hr class="shadow-lg"/>
 
-        const transactions = [
-            { date: '01/10/2018', transactionId: '1819-T0941307', credits: 23200, action: 'Listing Subscription Purchased', productType: 'Subscription', productId: '23478085' },
-            { date: '28/09/2018', transactionId: '1819-T0915713', credits: -690, action: 'Posting', productType: 'Property Listing', productId: '38894237' },
-            { date: '27/09/2018', transactionId: '1819-T0638975', credits: -1700, action: 'Posting', productType: 'Property Listing', productId: '38888885' },
-            { date: '27/09/2018', transactionId: '1819-T0915713', credits: 6900, action: 'Listing Subscription Purchased', productType: 'Subscription', productId: '23414247' },
-            { date: '04/09/2018', transactionId: '1819-T0622467', credits: -1, action: 'Increase Daily Boost Power', productType: 'Property Listing', productId: '37998287' }
-        ];
+</form>
 
-        function showHistory() {
-            const startDate = document.getElementById('startDate').value;
-            const endDate = document.getElementById('endDate').value;
-            document.getElementById('summaryDate').innerText = `${startDate} - ${endDate}`;
-
-            let startingCredits = 4612;
-            let addedCredits = 0;
-            let consumedCredits = 0;
-
-            const transactionHistory = document.getElementById('transactionHistory');
-            transactionHistory.innerHTML = '';
-
-            transactions.forEach(transaction => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${transaction.date}</td>
-                    <td>${transaction.transactionId}</td>
-                    <td class="${transaction.credits > 0 ? 'positive' : 'negative'}">${transaction.credits > 0 ? '+' : ''}${transaction.credits}</td>
-                    <td>${transaction.action}</td>
-                    <td>${transaction.productType}</td>
-                    <td>${transaction.productId}</td>
+    
                 `;
-                transactionHistory.appendChild(row);
+                            break;
+                        case 4:
+                            contentHtml = `
+                   <div class="container" id="containerId">
+                       
+                                                     <div class="mt-4">
+        <h1 class="section-title">Add one video of property</h1>
+        <p class="section-subtitle">
+            A video is worth a thousand pictures. Properties with videos get higher page views
+            <br />
+            Make sure it follows the <a class="video-guidelines" href="#">Video Guidelines</a>
+        </p>
+        <div class="upload-video-card mt-3">
+            <span class="badge">Only with Infinity Listings</span>
+            <h5>Videos available only with infinity listings only</h5>
+            <p>Drag your videos here or <a class="video-guidelines" href="#" id="uploadVideoLink">Upload</a></p>
+            <p>Upload video of max size 80 MB in format .mov, .mp4, .H264. Video duration should be less than 10 mins.
+            </p>
+            <input type="file" id="videoInput1" accept="video/*" style="display: none;" />
+            <div id="videoThumbnail"></div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <h1 class="section-title">Add photos of your property <span class="section-subtitle">(Optional)</span></h1>
+        <p class="section-subtitle">A picture is worth a thousand words. 87% of buyers look at photos before buying</p>
+        <div class="upload-photo-card mt-3">
+            <img alt="Icon representing photo upload" height="50"
+                src="https://storage.googleapis.com/a1aa/image/mvYdle4DZBz8HK83z95zs5FuFvXBaQydk3If3SzTiixcPoqTA.jpg"
+                width="50" />
+            <h5>+ Add atleast 5 photos</h5>
+            <p>Drag and drop your photos here<br />Upto 50 photos • Max. size 10 MB • Formats: png, jpg, jpeg, gif,
+                webp, heic, heif.</p>
+            <button class="btn" id="uploadPhotosButton">Upload Photos Now</button>
+            <input type="file" id="photoInput" accept="image" multiple style="display: none;" >
+            <div id="photoThumbnails" class=""></div>
+        </div>
+        <div class="info-box mt-3">
+            <i class="fas fa-lightbulb"></i> Add <strong>4+ property photos</strong> &amp; increase responses upto 21%
+        </div>
+        <div class="warning-box mt-3">
+            <i class="fas fa-exclamation-triangle"></i> Without photos your ad will be ignored by buyers
+        </div>
+       
+    </div>   
+      </div>
+                `;
+                            break;
+                        case 5:
+                            contentHtml = `
+                    <div class="header p-2">Add pricing and details...</div>
+    <div class="alert fade-in border shadow" id="photoAlert">
+        <i class="fas fa-exclamation-triangle"></i> Properties with <strong>4+ photos</strong> get maximum response.
+        Rank up your listing by adding 3 more pictures. <a href="#">Upload Now</a>
+      <!-- <span class="close-btn" id="closeAlert"><i class="fas fa-times"></i></span> -->
+    </div>
+    <div class="section-title">Ownership <i class="fas fa-question-circle"></i></div>
+    <div class="btn-group btn-group-toggle mt-4 text-center row m-2" data-toggle="buttons">
+        <label class="btn btn-outline-dark  text-center d-inline">
+            <input type="radio" name="ownership" id="freehold"> Freehold
+        </label>
+        <label class="btn btn-outline-dark d-inline">
+            <input type="radio" name="ownership" id="leasehold"> Leasehold
+        </label>
+        <label class="btn btn-outline-dark d-inline">
+            <input type="radio" name="ownership" id="cooperative"> Co-operative society
+        </label>
+        <label class="btn btn-outline-dark d-inline mt-2 mt-md-0">
+            <input type="radio" name="ownership" id="powerofattorney"> Power of Attorney
+        </label>
+    </div>
+    <div class="section-title mt-4">Which authority the property is approved by ? <i class="fas fa-question-circle"></i>
+        <span class="form-text">(Optional)</span>
+    </div>
+    <button type="button" class="btn btn-outline-primary m-2">+ Local Authority</button>
+    <div class="section-title mt-4">Price Details</div>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="₹ Expected Price">
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control mt-2 mt-md-0 " placeholder="₹ Price per sq.ft.">
+        </div>
+    </div>
+    <div class="form-text mt-2">₹ Price in words</div>
+    <div class="form-check mt-2">
+        <input class="form-check-input" type="checkbox" id="allinclusive">
+        <label class="form-check-label" for="allinclusive">
+            All inclusive price <i class="fas fa-question-circle"></i>
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="taxexcluded">
+        <label class="form-check-label" for="taxexcluded">
+            Tax and Govt. charges excluded
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="negotiable">
+        <label class="form-check-label" for="negotiable">
+            Price Negotiable
+        </label>
+    </div>
+    <button type="button" class="btn btn-outline-primary mt-2" id="addPricingDetailsBtn">+ Add more pricing
+        details</button>
+    <div class="additional-pricing mt-2 row">
+         <div class="col-md-6" >
+        <input type="text" class="form-control mt-2 " placeholder="Additional Pricing Detail 1">
+        </div>
+        <div class="col-md-6" >
+        <input type="text" class="form-control mt-2 " placeholder="Additional Pricing Detail 2">
+        </div>
+    </div>
+    
+    <div class="section-title mt-4">Do you charge brokerage?</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="brokerage" id="yes" value="yes">
+        <label class="form-check-label" for="yes">
+            Yes
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="brokerage" id="no" value="no">
+        <label class="form-check-label" for="no">
+            No
+        </label>
+    </div>
+    <div class="section-title mt-4">What makes your property unique</div>
+    <div class="form-text">Adding description will increase your listing visibility</div>
+    <textarea class="form-control mt-2" rows="3"
+        placeholder="Share some details about your property like spacious rooms, well maintained facilities.."
+        id="propertyDescription"></textarea>
+    <div class="form-text mt-2">Minimum 30 characters </div>
+    <div class="form-text" id="charCount">0/5000</div>
+  
+                `;
+                            break;
+                        case 6:
+                            contentHtml = `
+             <div class="container mt-4">
+        <div class="alert alert-success d-flex justify-content-between align-items-center flex-column">
+            <div>
+                <i class="fas fa-check-circle">
+                </i>
+                Congratulations! Your Property is ready to go live
+                <p class="mb-0">
+                    After a quick screening by our team, your property will be live soon and visible to the buyers. To
+                    manage all your listings
+                    <a href="#">
+                        click here
+                    </a>
+                    .
+                </p>
+            </div>
+            <div class="d-flex">
+                <button class="btn btn-outline-primary">
+                    Edit
+                </button>
+                <button class="btn btn-primary">
+                    Preview
+                </button>
+            </div>
+        </div>
+        <h2 class="text-center my-4">
+            Increase the visibility of your Property
+        </h2>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h5>
+                                Add missing details and improve your property score
+                            </h5>
+                            <p>
+                                Keep your score at least 80% for maximum visibility of your listing
+                            </p>
+                            <div class="d-flex align-items-center" style="gap:10px">
+                                <img alt="Icon representing property address" height="50"
+                                    src="https://storage.googleapis.com/a1aa/image/YBSqPS3QtH6MO52qhJgOLaLr6DEMomlLC5IYd7mHhK3W6i7E.jpg"
+                                    width="50" />
+                                <div>
+                                    <h6>
+                                        Add property address for buyers
+                                    </h6>
+                                    <p class=text-justify>
+                                        Crucial information helps buyers decide faster. Improves property score &amp;
+                                        ranking by 5%.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="upgrade-card">
+                    <p>
+                        Reach out to more buyers fast &amp; easy.
+                    </p>
+                    <button class="btn">
+                        Upgrade Now
+                    </button>
+                    <img alt="Illustration of a house with a flag" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/lPefONJC7bnXjkTsnVmkXO4ffDAH16mlSbhRnRF3GbeRLdxdC.jpg"
+                        width="100" />
+                </div>
+            </div>
+        </div>
+    </div>
+  
+                `;
+                            break;
+                    }
 
-                if (transaction.credits > 0) {
-                    addedCredits += transaction.credits;
-                } else {
-                    consumedCredits += Math.abs(transaction.credits);
+                    // Add the back and continue buttons dynamically
+                    contentHtml += `
+                    <div class="m-3"> 
+            <button type="button" class="btn btn-secondary mt-4" id="backBtn">Back</button>
+            <button type="button" class="btn btn-primary mt-4" id="continueBtn">Continue</button>
+            <div/>
+        `;
+                    content.innerHTML = contentHtml;
+
+
+                    // Re-attach the event listeners for both buttons
+                    document.getElementById('continueBtn').addEventListener('click', function () {
+                        if (currentStep < 6) {
+                            document.getElementById(`step${currentStep}`).classList.remove('active');
+                            document.getElementById(`step${currentStep}`).classList.add('completed');
+                            updateSidebarLine();
+                            currentStep++;
+                            document.getElementById(`step${currentStep}`).classList.add('active');
+                            updateContent();
+
+                        }
+                    });
+
+                    document.getElementById('backBtn').addEventListener('click', function () {
+                        if (currentStep > 1) {
+                            var _clsList = document.getElementById(`step${currentStep}`);
+                            if (_clsList == null) {
+                                currentStep -= 2;
+                                document.getElementById(`step${currentStep}`).classList.remove('active');
+                                currentStep--;
+                                document.getElementById(`step${currentStep}`).classList.add('active');
+                                updateContent();
+                                updateSidebarLine();
+                                updateButtonStates();
+                            }
+                            else {
+                                document.getElementById(`step${currentStep}`).classList.remove('active');
+                                currentStep--;
+                                document.getElementById(`step${currentStep}`).classList.add('active');
+                                updateContent();
+                                updateSidebarLine();
+                                // updateButtonStates();
+                            }
+                        }
+                    });
+
+                    function updateButtonStates() {
+                        document.getElementById('backBtn').disabled = currentStep === 1;
+                        document.getElementById('backBtn').hidden = currentStep === 6;
+                        document.getElementById('continueBtn').hidden = currentStep === 6;
+                    }
+
+                    updateButtonStates();  // Initialize button states on page 
                 }
-            });
 
-            document.getElementById('startingCredits').innerText = startingCredits;
-            document.getElementById('addedCredits').innerText = `+${addedCredits}`;
-            document.getElementById('consumedCredits').innerText = `-${consumedCredits}`;
-            document.getElementById('balanceCredits').innerText = startingCredits + addedCredits - consumedCredits;
-        }
+                function updateSidebarLine() {
+                    const steps = document.querySelectorAll('.sidebar .step');
+                    steps.forEach((step, index) => {
+                        if (index < currentStep) {
+                            step.classList.add('completed');
+                        } else {
+                            step.classList.remove('completed');
+                        }
+                    });
+                }
 
-        // Initial load
-        showHistory();
-    </script>
+
+
+
+
+
+                // ===================for photo and video thembnail=====
+                // const container = document.getElementById('containerId'); // Replace 'containerId' with the actual ID
+
+                // // DOMContentLoaded equivalent
+
+                // container.onclick = function (event) {
+                //     if (event.target.id === 'uploadVideoLink') {
+                //         console.log('Video upload button clicked');
+                //         document.getElementById('videoInput1').click();
+                //     } else if (event.target.id === 'uploadPhotosButton') {
+                //         console.log('Photo upload button clicked');
+                //         document.getElementById('photoInput').click();
+                //     }
+                // };
+                // window.onload = function () {
+                //     // Click handler
+
+
+                //     // Change handler for video input
+                //     // document.getElementById('videoInput1').onclick = function (event) {
+                //     //     console.log('Video file selected');
+                //     //     const file = event.target.files[0];
+                //     //     if (file) {
+                //     //         const videoThumbnail = document.getElementById('videoThumbnail');
+                //     //         videoThumbnail.innerHTML = '';
+                //     //         const videoElement = document.createElement('video');
+                //     //         videoElement.src = URL.createObjectURL(file);
+                //     //         videoElement.controls = true;
+                //     //         videoElement.classList.add('thumbnail');
+                //     //         videoThumbnail.appendChild(videoElement);
+                //     //     }
+                //     // };
+
+                //     // Change handler for photo input
+                //     document.getElementById('photoInput').onchange = function (event) {
+                //         console.log('Photos selected');
+                //         const files = event.target.files;
+                //         const photoThumbnails = document.getElementById('photoThumbnails');
+                //         console.log(photoThumbnails)
+                //         photoThumbnails.innerHTML = '';
+                //         Array.from(files).forEach(file => {
+                //             const imgElement = document.createElement('img');
+                //             imgElement.src = URL.createObjectURL(file);
+                //             console.log(file)
+                //             imgElement.classList.add('thumbnail');
+                //             photoThumbnails.appendChild(imgElement);
+                //         });
+                // document.getElementById('continueBtn').hidden = files.length < 5;
+                //     };
+                // };
+
+
+                // =====================pricing details ==============
+                // document.getElementById('addPricingDetailsBtn').addEventListener('click', function () {
+                //         var additionalPricing = document.querySelector('.additional-pricing');
+                //         additionalPricing.classList.add('show');
+                //     });
+
+                //     document.getElementById('propertyDescription').addEventListener('input', function () {
+                //         var charCount = this.value.length;
+                //         document.getElementById('charCount').innerText = charCount + '/5000';
+                //     });
+
+                //     document.getElementById('closeAlert').addEventListener('click', function () {
+                //         var alertBox = document.getElementById('photoAlert');
+                //         alertBox.style.opacity = '0';
+                //         alertBox.style.height = '0';
+                //         setTimeout(function () {
+                //             alertBox.style.display = 'none';
+                //         }, 500);
+                //     });
+            </script>
+
+
+
+
 </body>
 
 </html>
